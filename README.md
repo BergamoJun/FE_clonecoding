@@ -33,6 +33,15 @@ https://getbootstrap.com/docs/4.3/examples/album/
 
 ## 컴포넌트 계층 구조
 
-주된 컴포넌트인 헤더, 푸터, 포토카드(사진과 글이 있는 것), 버튼에 대해 어떤 계층으로 설계했는지 이곳에 작성해주세요. 그리고 자식 컴포넌트 들에 대해서 어떤 의도를 갖고 설계했는지(ex 정렬하기 위해서, border를 주기 위해서 등) 부담없이 간단하게 적으면 됩니다. (아래는 예시입니다.)
+- Header
+  - 고정된 상단 내비게이션 바(position: fixed)
+- Footer
+  - 하단에 사이트에 대한 간단한 설명을 적은 텍스트 container.
 
-![](https://velog.velcdn.com/images/wuzoo/post/ab092dd4-595e-41ab-a850-85cab0c83e80/image.png)
+- PhotoCard
+  - 카드 스타일 container
+    - child component: 이미지, 텍스트, 버튼 그룹
+    - 목적: 카드형태의 object 나열을 통해 깔끔한 UI 제공
+
+- Button
+  - View/Edit 버튼을 공통 component로 분리하여 노가다 방지
