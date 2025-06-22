@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+## 멋쟁이사자처럼 13기 클론코딩 과제
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+이번 시간에는 그동안 배운 React, CSS, React hook(useState, useEffect)을 사용하여 직접 클론코딩을 진행해볼 겁니다.
+이전 세션에 비해 다소 난이도가 올라갈 수 있으나 실제 구현되어있는 서비스를 직접 따라 만들면서 배우는 것만큼 빠르고 효과적인 공부법은 없으니까요.
+모두 화이팅!
 
-## Available Scripts
+## 실습 진행방법
 
-In the project directory, you can run:
+이번 주차는 과제 중심으로 세션이 진행됩니다!
+직접 Component를 만들어서 아래의 홈페이지와 같은 페이지를 구현해보세요.
 
-### `npm start`
+https://getbootstrap.com/docs/4.3/examples/album/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Icon 이미지 가져오기 : https://heroicons.com
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 심화학습 (필수 x)
 
-### `npm test`
+1. 우측 상단 햄버거 버튼 클릭 시 진행되는 동적 기능
+2. 기타 애니메이션 효과
+3. 하단 Footer
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 구현 화면
 
-### `npm run build`
+![스크린샷 2025-06-22 165423](https://github.com/user-attachments/assets/343a68ec-24a6-4ea9-8362-9a394642c607)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 구현 조건
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. `components`, `assets`, `pages` 3개의 폴더로 구분하여 개발합니다.
+   - components 폴더엔 내가 구현한 컴포넌트들을, assets 에는 이미지 파일들을, pages 에는 내가 보여줄 페이지 컴포넌트를 위치시킵니다.
+2. 상단에 `Header`는 스크롤하여도 화면에 고정되어 보이도록 합니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 컴포넌트 계층 구조
 
-### `npm run eject`
+- Header
+  - 고정된 상단 내비게이션 바(position: fixed)
+- Footer
+  - 하단에 사이트에 대한 간단한 설명을 적은 텍스트 container.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- PhotoCard
+  - 카드 스타일 container
+    - child component: 이미지, 텍스트, 버튼 그룹
+    - 목적: 카드형태의 object 나열을 통해 깔끔한 UI 제공
+    - Card-img, card-txt, card-footer(Button) 형태로 구성.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- MainPage
+  - Header, Main(intro, Album-grid), Footer 형태로 구성.
